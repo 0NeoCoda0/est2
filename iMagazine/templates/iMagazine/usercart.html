@@ -1,0 +1,28 @@
+{% extends "basic/header.html" %}
+{% load static %}
+
+
+{% block title %}
+Моя корзина
+{% endblock title %}
+
+{% block main %}
+<div class="cart-container">
+    <h2>Корзина</h2>
+    {% if cart_items %}
+    <ul>
+        {% for item in cart_items %}
+        <li>{{ item.product.name }} - {{ item.quantity }} шт. - {{ item.get_total_price }} руб.</li>
+        <button class="add-to-cart" data-product-id="{{ item.product.id }}" data-csrf-token="{{ csrf_token }}">Плюс</button>
+        <button>Минус</button>
+        {% endfor %}
+    </ul>
+    <p>Общая сумма: {{ cart.get_total_price }} руб.</p>
+    <a href="#" class="button">Оформить заказ</a>
+    {% else %}
+    <p>Ваша корзина пуста</p>
+    {% endif %}
+
+</div>
+<script src="{% static 'javaScripts/addToCart.js' %}"></script>
+{% endblock main %}

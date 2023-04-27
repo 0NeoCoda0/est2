@@ -1,0 +1,29 @@
+#body {
+    background-color: rgb(41, 39, 39);
+    color: whitesmoke;
+}
+
+.dark_bg_color {
+    background-color: rgba(77, 75, 75, 0.63);
+    border-radius: 10px;
+}
+
+.dropdown-menu {
+    background-color: rgb(85, 83, 83);
+    --bs-dropdown-link-color: whitesmoke;
+}
+
+.form-control {
+    background-color: #22222238;
+    margin: 0 10px 0 0;
+    color: whitesmoke;
+}
+
+.form-control:focus {
+    color: whitesmoke;
+    background-color: #333131;
+    border-color: #757757;
+    outline: 0;
+    box-shadow: 0 0 10px 1px #757757;
+}
+

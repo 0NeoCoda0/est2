@@ -1,0 +1,53 @@
+{% extends "basic/header.html" %}
+{% load static %}
+
+{% block title %}
+Эстетика вкусов - меню
+{% endblock title %}
+
+{% block main %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% for type in types %}
+        <div class="col-6 col-lg-6 col-md-6 ">
+            <button class="btn food-type w-100 foodt-{{type.id}}" id="food-type-button" data-type="{{ type.id }}">{{type.name }}</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container">
+    <div class="row align-items-stretch d-flex gy-3">
+        {% for product in products %}
+        <div class="col-12 col-md-5 col-lg-4 col-xl-3 mx-auto">
+            <div class="p-3 product-card h-100" data-type="{{ product.food_type.id }}">
+                <div>
+                    <h2 class="text-center">{{ product.name }}</h2>
+                    <img class="rounded img-fluid max-width-300 d-block mx-auto" src="{{ product.image.url }}"
+                        alt="{{ product.name }}">
+                </div>
+                <p class="size-12 px-1 h-100">{{ product.description }}</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 px-1 d-flex align-items-center infotab">
+                            <p class="infotext text-center">{{ product.price|floatformat:0 }} р</p>
+                        </div>
+                        <div class="col-6 px-1">
+                            <p class="text-end infotext">{{ product.weight|floatformat:0 }} кг</p>
+                            <p class="text-end infotext">{{ product.caloryes|floatformat:0 }} ккал</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary add-to-cart" data-product-id="{{ product.id }}" data-csrf-token="{{ csrf_token }}">
+                    Добавить в корзину
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="{% static 'javaScripts/chooseFoodType.js' %}"></script>
+<script src="{% static 'javaScripts/addToCart.js' %}"></script>
+
+{% endblock main %}

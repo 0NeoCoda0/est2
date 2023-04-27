@@ -1,0 +1,50 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-image: url('../images/index-background.png');
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 440px;
+    width: 50%;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: clamp(14px, 3vw, 40px);
+    width: 100%;
+    color: whitesmoke;
+}
+
+a {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    box-shadow: 0 0 0 0 transparent;
+    border-radius: 20px;
+    padding: clamp(14px, 2vw, 20px);
+    text-align: center;
+
+    transition: box-shadow 0.1s;
+}
+
+a:active,
+a:focus {
+    box-shadow: 0 0 5px 1px goldenrod;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}

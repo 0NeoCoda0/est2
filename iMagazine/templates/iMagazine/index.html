@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <title>Эстетика вкусов</title>
+</head>
+<body>
+    <img src="{% static 'images/aesthetics-of-tastes.png' %}" alt="Главный логотип компании с надписью Эстетика вкусов">
+    <h1>ОТКРОЙ ЭСТЕТИКУ ВАЙНАХСКОЙ КУХНИ!</h1>
+    <a href="{% url 'menu_page'%}">Посмотреть меню</a>
+</body>
+</html>
